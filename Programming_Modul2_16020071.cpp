@@ -5,7 +5,7 @@
 #include<stdlib.h>
 
 //menu
-void showMenu(int input){
+void showMenu(){
     printf("\nKalkulator Sederhana\n");
     printf("====\n");
     printf("1. Kalkulator biasa (+, -, *, /, ^)\n");
@@ -30,9 +30,8 @@ float integral(float a, float b, float c, float x1, float x2, float n){
     return(sum);
 }
 int main(){
-    int input;
     int menu;
-    showMenu(input);
+    showMenu();
     scanf("%d",&menu);
 	while (menu!=3){
         if (menu==1){
@@ -96,7 +95,7 @@ int main(){
             hasil = integral(a, b, c, x1, x2, n);
             printf("\nHasil integral adalah %f ", hasil);
         }
-        showMenu(input);
+        showMenu();
         scanf("%d",&menu);
     }
 }
