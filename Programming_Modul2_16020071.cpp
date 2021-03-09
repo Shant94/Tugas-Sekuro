@@ -1,3 +1,6 @@
+//Ariansyah
+//16020071
+
 #include<stdio.h>
 #include<stdlib.h>
 
