@@ -21,13 +21,22 @@ float integral(float a, float b, float c, float x1, float x2, float n){
     float sum, luas_partisi, partisi1, partisi2, dx;
     sum = 0;
     dx=(x2-x1)/n;
-    for (float i = 0; i < n - 1; i++){
+    for (float i = 0; i < n; i++){
         partisi1 = x1 + i*dx;
         partisi2 = x1 + (i+1)*dx;
         luas_partisi = luas_trapesium(a, b, c, dx, partisi1, partisi2);
         sum = sum + luas_partisi;
     }
     return(sum);
+}
+//pangkat
+float pangkat(float x,float y){
+    float p;
+    p=x;
+    for (float i = 1; i < y ; i++){
+        p = p*x;
+    }
+    return(p);
 }
 int main(){
     int menu;
@@ -68,10 +77,7 @@ int main(){
                     break;
                 case '^':
                     //perpangkatan
-                    z = x;
-                    for (float i = 1; i < y ; i++){
-                        z = z*x;
-                    }
+                    z = pangkat(x,y);
                     printf("%f ^ %f = %f", x, y, z);
                     break;
             }
@@ -95,6 +101,7 @@ int main(){
             hasil = integral(a, b, c, x1, x2, n);
             printf("\nHasil integral adalah %f ", hasil);
         }
+        printf("\n================\n");
         showMenu();
         scanf("%d",&menu);
     }
